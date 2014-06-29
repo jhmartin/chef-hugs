@@ -1,5 +1,16 @@
 #!/usr/bin/env rake
 
+task :rubocop do
+  if Gem::Version.new("1.9.2") <= Gem::Version.new(RUBY_VERSION.dup)
+    sandbox = File.join(File.dirname(__FILE__), %w{tmp foodcritic cookbook})
+    prepare_foodcritic_sandbox(sandbox)
+
+    sh "rubocop #{File.dirname(sandbox)}"
+  else
+    puts "WARN: rubycop run is skipped as Ruby #{RUBY_VERSION} is < 1.9.2."
+  end
+end
+
 task :tailor do
   if Gem::Version.new("1.9.2") <= Gem::Version.new(RUBY_VERSION.dup)
     sandbox = File.join(File.dirname(__FILE__), %w{tmp foodcritic cookbook})
