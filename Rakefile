@@ -2,10 +2,7 @@
 
 task :rubocop do
   if Gem::Version.new("1.9.2") <= Gem::Version.new(RUBY_VERSION.dup)
-    sandbox = File.join(File.dirname(__FILE__), %w{tmp foodcritic cookbook})
-    prepare_foodcritic_sandbox(sandbox)
-
-    sh "rubocop #{File.dirname(sandbox)}"
+    sh "rubocop ."
   else
     puts "WARN: rubycop run is skipped as Ruby #{RUBY_VERSION} is < 1.9.2."
   end
@@ -13,10 +10,7 @@ end
 
 task :tailor do
   if Gem::Version.new("1.9.2") <= Gem::Version.new(RUBY_VERSION.dup)
-    sandbox = File.join(File.dirname(__FILE__), %w{tmp foodcritic cookbook})
-    prepare_foodcritic_sandbox(sandbox)
-
-    sh "tailor #{File.dirname(sandbox)}"
+    sh "tailor ."
   else
     puts "WARN: tailor run is skipped as Ruby #{RUBY_VERSION} is < 1.9.2."
   end
