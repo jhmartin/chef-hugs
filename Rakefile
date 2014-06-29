@@ -1,5 +1,17 @@
 #!/usr/bin/env rake
 
+task :tailor do
+  if Gem::Version.new("1.9.2") <= Gem::Version.new(RUBY_VERSION.dup)
+    sandbox = File.join(File.dirname(__FILE__), %w{tmp foodcritic cookbook})
+    prepare_foodcritic_sandbox(sandbox)
+
+    sh "tailor #{File.dirname(sandbox)}"
+  else
+    puts "WARN: tailor run is skipped as Ruby #{RUBY_VERSION} is < 1.9.2."
+  end
+end
+
+
 desc "Runs foodcritic linter"
 task :foodcritic do
   if Gem::Version.new("1.9.2") <= Gem::Version.new(RUBY_VERSION.dup)
@@ -12,7 +24,7 @@ task :foodcritic do
   end
 end
 
-task :default => 'foodcritic'
+task :default => ['foodcritic','tailor']
 
 private
 
