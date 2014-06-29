@@ -6,7 +6,7 @@
 #
 # 
 #
-file "/tmp/hugs" do
-	content "#!/bin/sh\necho You get a hug!\n"
+cookbook_file "/tmp/hugs" do
+	source "hugs"
 	mode 0755
 end
