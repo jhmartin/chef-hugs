@@ -2,7 +2,7 @@
 
 task :rubocop do
   if Gem::Version.new("1.9.2") <= Gem::Version.new(RUBY_VERSION.dup)
-    sh "rubocop ."
+    sh "rubocop #{ENV['TRAVIS_BUILD_DIR']}"
   else
     puts "WARN: rubycop run is skipped as Ruby #{RUBY_VERSION} is < 1.9.2."
   end
@@ -10,7 +10,7 @@ end
 
 task :tailor do
   if Gem::Version.new("1.9.2") <= Gem::Version.new(RUBY_VERSION.dup)
-    sh "tailor ."
+    sh "tailor #{ENV['TRAVIS_BUILD_DIR']}"
   else
     puts "WARN: tailor run is skipped as Ruby #{RUBY_VERSION} is < 1.9.2."
   end
