@@ -1,7 +1,8 @@
-name             'hugs'
-maintainer       ''
+# encoding: UTF-8
+name 'hugs'
+maintainer ''
 maintainer_email ''
-license          ''
-description      'Installs/Configures hugs'
+license ''
+description 'Installs/Configures hugs'
 long_description 'Installs/Configures hugs'
-version          '0.1.0'
+version '0.1.0'
