@@ -1,4 +1,5 @@
 #!/usr/bin/env rake
+# encoding: UTF-8
 
 task :rubocop do
   if Gem::Version.new('1.9.2') <= Gem::Version.new(RUBY_VERSION.dup)
