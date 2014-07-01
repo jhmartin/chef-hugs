@@ -4,7 +4,7 @@ gemfile:
 rvm:
   - 1.9.3
   - 2.1.1
-script: bundle exec rake rubocop tailor
+script: bundle exec rake foodcritic rubocop tailor
 addons:
    code_climate:
       repo_token: 2e06c55df40cc4a9ba84f06815d56b218dfaad5554253444d2415ceec36c8088
