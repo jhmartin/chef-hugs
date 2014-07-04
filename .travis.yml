@@ -6,7 +6,9 @@ before_script:
   - wget https://get.docker.io/builds/Linux/x86_64/docker-latest -O /tmp/docker
   - chmod u+x /tmp/docker
 
-install: apt-get install docker.io
+install:
+  - apt-get install docker.io
+  - ps -ef
 
 rvm:
   - 1.9.3
