@@ -7,7 +7,7 @@ before_script:
 
 install:
   - curl -s https://get.docker.io/ubuntu/ | sudo sh
-  - sudo service docker start
+  - sleep 10
   - sudo docker info
 
 rvm:
