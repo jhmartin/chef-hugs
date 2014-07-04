@@ -3,11 +3,11 @@ gemfile:
    - test/support/Gemfile
 
 before_script:
-  - wget https://get.docker.io/builds/Linux/x86_64/docker-latest -O /tmp/docker
-  - chmod u+x /tmp/docker
+  - curl -s https://get.docker.io/ubuntu/ | sudo sh
+  - ps -ef
 
 install:
-  - sudo apt-get install docker.io
+  - 
   - ps -ef
 
 rvm:
