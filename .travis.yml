@@ -3,12 +3,11 @@ gemfile:
    - test/support/Gemfile
 
 before_script:
-  - curl -s https://get.docker.io/ubuntu/ | sudo sh
   - ps -ef
 
 install:
-  - 
-  - ps -ef
+  - curl -s https://get.docker.io/ubuntu/ | sudo sh
+  - docker info
 
 rvm:
   - 1.9.3
