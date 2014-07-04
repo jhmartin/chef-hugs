@@ -5,7 +5,8 @@ gemfile:
 before_script:
   - wget https://get.docker.io/builds/Linux/x86_64/docker-latest -O /tmp/docker
   - chmod u+x /tmp/docker
-  - /tmp/docker -H unix:///tmp/docker.sock run ubuntu:14.04 /bin/echo 'Hello World'
+
+install: apt-get install docker.io
 
 rvm:
   - 1.9.3
