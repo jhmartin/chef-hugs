@@ -16,10 +16,10 @@ install:
 rvm:
   - 1.9.3
 
-before_script: sudo bash ./test.sh
+before_script: sudo bash -x ./test.sh
 
 script: 
-  - kitchen test
+  - bundle exec kitchen test
 
 addons:
    code_climate:
