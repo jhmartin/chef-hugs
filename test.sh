@@ -63,4 +63,6 @@ mount --bind /run/resolvconf/resolv.conf /etc/resolv.conf
 # Start docker daemon
 docker -d &
 sleep 5
+echo $PATH
+
 bundle exec kitchen test
