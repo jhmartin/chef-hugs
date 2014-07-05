@@ -29,7 +29,7 @@ task :foodcritic do
   end
 end
 
-task :default => %w(foodcritic test tailor rubocop)
+task :default => %w(foodcritic knife tailor rubocop)
 
 private
 
