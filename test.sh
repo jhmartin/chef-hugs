@@ -4,8 +4,6 @@
 #set -e
 set -x
 
-\curl -sSL https://get.rvm.io | bash -s stable --ruby
-rvm use 1.9.3 --install --binary --fuzzy
 
 save_and_shutdown() {
   # save built for host result
@@ -60,6 +58,9 @@ ip route add default via 10.1.1.254
 mkdir -p /run/resolvconf
 echo 'nameserver 8.8.8.8' > /run/resolvconf/resolv.conf
 mount --bind /run/resolvconf/resolv.conf /etc/resolv.conf
+
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+rvm use 1.9.3 --install --binary --fuzzy
 
 # Start docker daemon
 docker -d &
