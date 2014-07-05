@@ -9,8 +9,7 @@ rvm use 1.9.3 --install --binary --fuzzy
 save_and_shutdown() {
   # save built for host result
   # force clean shutdown
-  #halt -f
-  true
+  halt -f
 }
 
 # make sure we shut down cleanly
