@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Exit on first error
-set -e
+#set -e
+set -x
 
 
 save_and_shutdown() {
