@@ -4,6 +4,7 @@
 #set -e
 set -x
 
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
 rvm use 1.9.3 --install --binary --fuzzy
 
 save_and_shutdown() {
