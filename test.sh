@@ -4,6 +4,7 @@
 #set -e
 set -x
 
+rvm use 1.9.3 --install --binary --fuzzy
 
 save_and_shutdown() {
   # save built for host result
