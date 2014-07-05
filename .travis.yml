@@ -18,10 +18,8 @@ install:
 rvm:
   - 1.9.3
 
-before_script: sudo bash -x ./test.sh
-
 script: 
-  - bundle exec kitchen test
+  - ./linux quiet mem=2G rootfstype=hostfs rw eth0=slirp,,/usr/bin/slirp-fullbolt init=$(pwd)/test.sh WORKDIR=$(pwd) HOME=$HOME
 
 addons:
    code_climate:
