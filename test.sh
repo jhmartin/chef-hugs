@@ -8,7 +8,8 @@ set -x
 save_and_shutdown() {
   # save built for host result
   # force clean shutdown
-  halt -f
+  #halt -f
+  true
 }
 
 # make sure we shut down cleanly
