@@ -29,7 +29,11 @@ task :foodcritic do
   end
 end
 
-task :default => %w(foodcritic tailor rubocop)
+task :test do
+    sh "kitchen test"
+end
+
+task :default => %w(foodcritic tailor rubocop test)
 
 private
 

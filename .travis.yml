@@ -2,18 +2,21 @@ language: ruby
 gemfile:
    - test/support/Gemfile
 
-before_script:
-  - ps -ef
-
 install:
-  - curl -s https://get.docker.io/ubuntu/ | sudo sh
-  - sleep 10
-  - sudo docker info
+  - sudo sh -c "wget -qO- https://get.docker.io/gpg | apt-key add -"
+  - sudo sh -c "echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+  - sudo apt-get update
+  - sudo mkdir -p /var/lib/docker
+  - echo exit 101 | sudo tee /usr/sbin/policy-rc.d
+  - sudo chmod +x /usr/sbin/policy-rc.d
+  - sudo apt-get install -y slirp lxc lxc-docker aufs-tools cgroup-lite
+  - curl -sLo linux https://github.com/jpetazzo/sekexe/raw/master/uml
+  - chmod +x linux
 
 rvm:
   - 1.9.3
 
-script: bundle exec rake foodcritic rubocop tailor
+script: bash ./test.sh
 addons:
    code_climate:
       repo_token: 2e06c55df40cc4a9ba84f06815d56b218dfaad5554253444d2415ceec36c8088
