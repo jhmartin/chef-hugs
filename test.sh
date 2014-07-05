@@ -63,3 +63,4 @@ mount --bind /run/resolvconf/resolv.conf /etc/resolv.conf
 # Start docker daemon
 docker -d &
 sleep 5
+sudo docker info
