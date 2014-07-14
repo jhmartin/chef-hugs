@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 require 'chefspec'
 
 describe 'hugs::default' do
