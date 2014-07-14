@@ -1,11 +1,11 @@
 language: ruby
 gemfile:
-   - test/support/Gemfile
+- test/support/Gemfile
 rvm:
-  - 1.9.3
-  - 2.1.1
-script: 
-  - bundle exec rake foodcritic rubocop tailor knife
-addons:
-   code_climate:
-      repo_token: 2e06c55df40cc4a9ba84f06815d56b218dfaad5554253444d2415ceec36c8088
+- 1.9.3
+- 2.1.1
+script:
+- bundle exec rake foodcritic rubocop tailor knife
+env:
+  global:
+    secure: YUtRj7Kux3kbL6ZxaC/YEELdUiG8y+R+nxbCUNEdfHofi60Fply8J10Qm8u/baKIfJMJgfUCMqePedOs6UQF3kwih7sNzODexRRuiQ/MZMsBHPO3kJp/E3JbKZx9MbMuX2Rt3toRfKFB0e44cU9pZX/jJv+94R+0xo0aEXL7GaY=
