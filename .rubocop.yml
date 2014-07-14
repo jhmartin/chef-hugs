@@ -3,4 +3,4 @@ HashSyntax:
 
 AllCops:
   Exclude:
-    - 'test'
+    - 'test/**/*'
