@@ -1,2 +1,6 @@
 HashSyntax:
   EnforcedStyle: hash_rockets
+
+AllCops:
+  Exclude:
+    - 'test'
