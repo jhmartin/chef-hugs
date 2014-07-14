@@ -109,7 +109,7 @@
 #
 Tailor.config do |config|
   config.formatters "text"
-  config.recursive_file_set '*.rb' do |style|
+  config.file_set 'tmp/cookbooks/cookbook/**/*.rb' do |style|
     style.allow_camel_case_methods false, level: :error
     style.allow_conditional_parentheses false, level: :warn
     style.allow_hard_tabs false, level: :error
