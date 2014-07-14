@@ -1,6 +1,10 @@
 #!/usr/bin/env rake
 # encoding: UTF-8
 
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:spec)
+
 task :rubocop do
   if Gem::Version.new('1.9.2') <= Gem::Version.new(RUBY_VERSION.dup)
     sh 'rubocop'
@@ -29,7 +33,7 @@ task :foodcritic do
   end
 end
 
-task :default => %w(foodcritic knife tailor rubocop)
+task :default => %w(spec foodcritic knife tailor rubocop)
 
 private
 

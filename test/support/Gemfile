@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'codeclimate-test-reporter', group: :test, require: nil
+group :test, :integration do
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'chefspec'
+  gem 'serverspec'
+  gem 'coveralls'
+end
+
 gem 'rake'
 gem 'rubocop'
 gem 'foodcritic'

@@ -1,3 +1,5 @@
 .kitchen
 Berksfile.lock
 tmp
+coverage
+*.swp
