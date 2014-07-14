@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 group :test, :integration do
   gem 'codeclimate-test-reporter', require: nil
   gem 'chefspec'
+  gem 'berkshelf'
   gem 'serverspec'
   gem 'coveralls'
 end

@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
 require 'chefspec'
-# require 'chefspec/berkshelf'
+require 'chefspec/berkshelf'
 require 'chefspec/cacher'
 require 'chefspec/server'
 require 'coveralls'
